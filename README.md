@@ -1,4 +1,4 @@
-# StablecoinStats
+# Stablecoin Stats
 A real time dashboard for USD stablecoin market stability. Now live at [stablecoinstats.live](stablecoinstats.live)!
 
 ## Overview
