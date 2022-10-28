@@ -16,7 +16,7 @@ This app receives price data for the 3 major USD-pegged stablecoins (BUSD, USDC,
 
 ## How It Works
 1. Each exchange WebSocket has a dedicated client to maintain the connection and receive messages. The client processes market updates from the exchange and broadcasts relevant currency pair exchange rates to a Phoenix PubSub `rates` topic.
-2. The core backend listens for new `rates`, then stashes them in a PostgreSQL database and a non-perisistent cache. The latter is implemented as a vanilla GenServer process with key-value state. Whenever new data comes in, we re-run the pricing model to generate a new price and new set of stats. New values are broadcast to a Phoenix PubSub `stats` topic.
+2. The core backend listens for new `rates`, then stashes them in a PostgreSQL database and a non-perisistent cache. The latter is implemented as a [vanilla GenServer process with key-value state](https://gist.github.com/oklaiss/8b70f78e3f9f28fec34696ecbf328aeb). Whenever new data comes in, we re-run the pricing model to generate a new price and new set of stats. Newly calculated values are broadcast to a Phoenix PubSub `stats` topic.
 3. When a client connects through a browser, a Phoenix LiveView process is spawned. On mount, it receives initial state from the cache/database and begins to listen for new `stats`. Fully rendered HTML is served directly from the backend to the browser via Phoenix channel/WebSocket.
 
 ## Architecture
