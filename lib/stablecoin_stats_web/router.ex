@@ -2,21 +2,22 @@ defmodule StablecoinStatsWeb.Router do
   use StablecoinStatsWeb, :router
 
   pipeline :browser do
-    plug :accepts, ["html"]
-    plug :fetch_session
-    plug :fetch_live_flash
-    plug :put_root_layout, {StablecoinStatsWeb.LayoutView, :root}
-    plug :protect_from_forgery
-    plug :put_secure_browser_headers
+    plug(:accepts, ["html"])
+    plug(:fetch_session)
+    plug(:fetch_live_flash)
+    plug(:put_root_layout, {StablecoinStatsWeb.LayoutView, :root})
+    plug(:protect_from_forgery)
+    plug(:put_secure_browser_headers)
   end
 
   pipeline :api do
-    plug :accepts, ["json"]
+    plug(:accepts, ["json"])
   end
 
   scope "/", StablecoinStatsWeb do
-    pipe_through :browser
-    live "/", StatsLive
+    pipe_through(:browser)
+    live("/", StatsLive)
+    get("/info", PageController, :index)
   end
 
   # Other scopes may use custom stacks.
@@ -35,9 +36,9 @@ defmodule StablecoinStatsWeb.Router do
     import Phoenix.LiveDashboard.Router
 
     scope "/" do
-      pipe_through :browser
+      pipe_through(:browser)
 
-      live_dashboard "/dashboard", metrics: StablecoinStatsWeb.Telemetry
+      live_dashboard("/dashboard", metrics: StablecoinStatsWeb.Telemetry)
     end
   end
 
@@ -47,9 +48,9 @@ defmodule StablecoinStatsWeb.Router do
   # node running the Phoenix server.
   if Mix.env() == :dev do
     scope "/dev" do
-      pipe_through :browser
+      pipe_through(:browser)
 
-      forward "/mailbox", Plug.Swoosh.MailboxPreview
+      forward("/mailbox", Plug.Swoosh.MailboxPreview)
     end
   end
 end
