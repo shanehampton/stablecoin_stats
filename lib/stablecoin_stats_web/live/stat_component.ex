@@ -21,7 +21,7 @@ defmodule StablecoinStatsWeb.StatComponent do
             <div class="tooltip">RMSE
                 <div class="top">
                     <p style="margin-bottom:6px; font-weight:bold; font-size: 14px; line-height:110%">Root-Mean-Square Error</p>
-                    <p style="margin-bottom:6px; font-size: 13px; line-height:106%">Measures the continuous error between the coin's price and its $1.00 peg</p>
+                    <p style="margin-bottom:6px; font-size: 13px; line-height:106%">Measures the magnitude of error between the coin's price and its $1.00 peg</p>
                     <i></i>
                 </div>
             </div>
