@@ -66,10 +66,14 @@ defmodule StablecoinStats.Core do
           []
       end
 
-    Enum.each(new_stats, &DB.create_stat/1)
-    Enum.each(new_stats, &broadcast_stat/1)
+    Enum.each(new_stats, &store_and_broadcast_stat/1)
 
     {:noreply, state}
+  end
+
+  def store_and_broadcast_stat(stat) do
+    DB.create_stat(stat)
+    broadcast_stat(stat)
   end
 
   def generate_stat(symbol, date, prices) do
@@ -127,6 +131,7 @@ defmodule StablecoinStats.Core do
     Phoenix.PubSub.broadcast(StablecoinStats.PubSub, @stats_topic, {:new_stat, stat})
   end
 
+  @spec subscribe_to_stats :: :ok | {:error, {:already_registered, pid}}
   def subscribe_to_stats() do
     Logger.info("Subscribing to PubSub stats topic")
     Phoenix.PubSub.subscribe(StablecoinStats.PubSub, @stats_topic)
