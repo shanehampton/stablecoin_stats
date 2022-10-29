@@ -286,12 +286,12 @@ defmodule StablecoinStats.DB do
 
   @doc """
   Returns the list of stats.
-
+  
   ## Examples
-
+  
       iex> list_stats()
       [%Stat{}, ...]
-
+  
   """
   def list_stats do
     Repo.all(Stat)
@@ -299,31 +299,31 @@ defmodule StablecoinStats.DB do
 
   @doc """
   Gets a single stat.
-
+  
   Raises `Ecto.NoResultsError` if the Stat does not exist.
-
+  
   ## Examples
-
+  
       iex> get_stat!(123)
       %Stat{}
-
+  
       iex> get_stat!(456)
       ** (Ecto.NoResultsError)
-
+  
   """
   def get_stat!(id), do: Repo.get!(Stat, id)
 
   @doc """
   Creates a stat.
-
+  
   ## Examples
-
+  
       iex> create_stat(%{field: value})
       {:ok, %Stat{}}
-
+  
       iex> create_stat(%{field: bad_value})
       {:error, %Ecto.Changeset{}}
-
+  
   """
   def create_stat(attrs \\ %{}) do
     Logger.debug("Storing stat in DB:\n#{inspect(attrs)}")
@@ -335,15 +335,15 @@ defmodule StablecoinStats.DB do
 
   @doc """
   Updates a stat.
-
+  
   ## Examples
-
+  
       iex> update_stat(stat, %{field: new_value})
       {:ok, %Stat{}}
-
+  
       iex> update_stat(stat, %{field: bad_value})
       {:error, %Ecto.Changeset{}}
-
+  
   """
   def update_stat(%Stat{} = stat, attrs) do
     stat
@@ -353,15 +353,15 @@ defmodule StablecoinStats.DB do
 
   @doc """
   Deletes a stat.
-
+  
   ## Examples
-
+  
       iex> delete_stat(stat)
       {:ok, %Stat{}}
-
+  
       iex> delete_stat(stat)
       {:error, %Ecto.Changeset{}}
-
+  
   """
   def delete_stat(%Stat{} = stat) do
     Repo.delete(stat)
@@ -369,12 +369,12 @@ defmodule StablecoinStats.DB do
 
   @doc """
   Returns an `%Ecto.Changeset{}` for tracking stat changes.
-
+  
   ## Examples
-
+  
       iex> change_stat(stat)
       %Ecto.Changeset{data: %Stat{}}
-
+  
   """
   def change_stat(%Stat{} = stat, attrs \\ %{}) do
     Stat.changeset(stat, attrs)
@@ -384,12 +384,12 @@ defmodule StablecoinStats.DB do
 
   @doc """
   Returns the list of trades.
-
+  
   ## Examples
-
+  
       iex> list_trades()
       [%Trade{}, ...]
-
+  
   """
   def list_trades do
     Repo.all(Trade)
@@ -397,31 +397,31 @@ defmodule StablecoinStats.DB do
 
   @doc """
   Gets a single trade.
-
+  
   Raises `Ecto.NoResultsError` if the Trade does not exist.
-
+  
   ## Examples
-
+  
       iex> get_trade!(123)
       %Trade{}
-
+  
       iex> get_trade!(456)
       ** (Ecto.NoResultsError)
-
+  
   """
   def get_trade!(id), do: Repo.get!(Trade, id)
 
   @doc """
   Creates a trade.
-
+  
   ## Examples
-
+  
       iex> create_trade(%{field: value})
       {:ok, %Trade{}}
-
+  
       iex> create_trade(%{field: bad_value})
       {:error, %Ecto.Changeset{}}
-
+  
   """
   def create_trade(attrs \\ %{}) do
     %Trade{}
@@ -431,15 +431,15 @@ defmodule StablecoinStats.DB do
 
   @doc """
   Updates a trade.
-
+  
   ## Examples
-
+  
       iex> update_trade(trade, %{field: new_value})
       {:ok, %Trade{}}
-
+  
       iex> update_trade(trade, %{field: bad_value})
       {:error, %Ecto.Changeset{}}
-
+  
   """
   def update_trade(%Trade{} = trade, attrs) do
     trade
@@ -449,15 +449,15 @@ defmodule StablecoinStats.DB do
 
   @doc """
   Deletes a trade.
-
+  
   ## Examples
-
+  
       iex> delete_trade(trade)
       {:ok, %Trade{}}
-
+  
       iex> delete_trade(trade)
       {:error, %Ecto.Changeset{}}
-
+  
   """
   def delete_trade(%Trade{} = trade) do
     Repo.delete(trade)
@@ -465,12 +465,12 @@ defmodule StablecoinStats.DB do
 
   @doc """
   Returns an `%Ecto.Changeset{}` for tracking trade changes.
-
+  
   ## Examples
-
+  
       iex> change_trade(trade)
       %Ecto.Changeset{data: %Trade{}}
-
+  
   """
   def change_trade(%Trade{} = trade, attrs \\ %{}) do
     Trade.changeset(trade, attrs)
@@ -478,12 +478,12 @@ defmodule StablecoinStats.DB do
 
   @doc """
   Returns the list of rates.
-
+  
   ## Examples
-
+  
       iex> list_rates()
       [%Rate{}, ...]
-
+  
   """
   def list_rates do
     Repo.all(Rate)
@@ -491,31 +491,31 @@ defmodule StablecoinStats.DB do
 
   @doc """
   Gets a single rate.
-
+  
   Raises `Ecto.NoResultsError` if the Rate does not exist.
-
+  
   ## Examples
-
+  
       iex> get_rate!(123)
       %Rate{}
-
+  
       iex> get_rate!(456)
       ** (Ecto.NoResultsError)
-
+  
   """
   def get_rate!(id), do: Repo.get!(Rate, id)
 
   @doc """
   Creates a rate.
-
+  
   ## Examples
-
+  
       iex> create_rate(%{field: value})
       {:ok, %Rate{}}
-
+  
       iex> create_rate(%{field: bad_value})
       {:error, %Ecto.Changeset{}}
-
+  
   """
   def create_rate(attrs \\ %{}) do
     %Rate{}
@@ -525,15 +525,15 @@ defmodule StablecoinStats.DB do
 
   @doc """
   Updates a rate.
-
+  
   ## Examples
-
+  
       iex> update_rate(rate, %{field: new_value})
       {:ok, %Rate{}}
-
+  
       iex> update_rate(rate, %{field: bad_value})
       {:error, %Ecto.Changeset{}}
-
+  
   """
   def update_rate(%Rate{} = rate, attrs) do
     rate
@@ -543,15 +543,15 @@ defmodule StablecoinStats.DB do
 
   @doc """
   Deletes a rate.
-
+  
   ## Examples
-
+  
       iex> delete_rate(rate)
       {:ok, %Rate{}}
-
+  
       iex> delete_rate(rate)
       {:error, %Ecto.Changeset{}}
-
+  
   """
   def delete_rate(%Rate{} = rate) do
     Repo.delete(rate)
@@ -559,12 +559,12 @@ defmodule StablecoinStats.DB do
 
   @doc """
   Returns an `%Ecto.Changeset{}` for tracking rate changes.
-
+  
   ## Examples
-
+  
       iex> change_rate(rate)
       %Ecto.Changeset{data: %Rate{}}
-
+  
   """
   def change_rate(%Rate{} = rate, attrs \\ %{}) do
     Rate.changeset(rate, attrs)
