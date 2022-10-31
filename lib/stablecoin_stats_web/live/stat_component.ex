@@ -4,11 +4,11 @@ defmodule StablecoinStatsWeb.StatComponent do
   def render(assigns) do
     ~H"""
     <div class="flex-vertical" style={"margin-top:4%; margin-bottom:4%; border-radius:6px; box-shadow: #{if @stat.is_high_score do @stat.primary_color else "#00000000" end} 0px 0px 0px 2.5px"}>
-      <div class="flex-vertical" style="padding:1%; width:360px; height:230px; border-radius:6px 6px 0 0; background:rgba(255,255,255,0.1)">
+      <div class="flex-vertical" style="padding:1%; width:345px; height:230px; border-radius:6px 6px 0 0; background:rgba(255,255,255,0.1)">
         <div class="flex-horizontal" style="margin-top:2%">
           <img src={"/images/#{@stat.symbol}_logo.png"} height="53px" width="53px" style="margin-left: 2%">
-          <div style="color:white; font-size:24px; margin-left:4%"><%=String.upcase(@stat.symbol)%></div>
-          <div style="color:white; margin-left:10%; font-size:32px">$<%=:erlang.float_to_binary(@stat.price, [decimals: 6])%></div>
+          <div style="color:white; font-size:24px; margin-left:6%"><%=String.upcase(@stat.symbol)%></div>
+          <div style="color:white; margin-left:8%; font-size:32px">$<%=:erlang.float_to_binary(@stat.price, [decimals: 6])%></div>
         </div>
         <div style="width:308px; height:112px; margin:auto">
           <%=@stat.sparkline%>
@@ -62,7 +62,7 @@ defmodule StablecoinStatsWeb.StatComponent do
             </div>
           </div>
         </div>
-        <div class="flex-vertical" style="margin-left:4px; color:white; padding:1%; width:126px; height:139px; border-radius:0 0 6px 0; background:rgba(255,255,255,0.1); align-items:center; justify-content:center; row-gap:8px">
+        <div class="flex-vertical" style="margin-left:4px; color:white; padding:1%; width:111px; height:139px; border-radius:0 0 6px 0; background:rgba(255,255,255,0.1); align-items:center; justify-content:center; row-gap:8px">
           <div style="font-size:12px">
             <div class="tooltip">Stability Score
               <div class="top">
