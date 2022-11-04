@@ -1,18 +1,22 @@
 # Stablecoin Stats
 
-A real time dashboard for USD stablecoin market stability
+A real-time dashboard for USD stablecoin market metrics. Live @ [stablecoinstats.live](stablecoinstats.live).
+
+## What is a Stablecoin?
+
+Stablecoins are cryptocurrencies pegged to real-world assets. By design, a stablecoin's price is intended to trade at par with the tracked asset. This app is specifically concerned with coins pegged to the US Dollar (e.g. USDC, USDT, BUSD).
 
 ## Overview
 
-This app receives price data for the 3 major USD-pegged stablecoins (BUSD, USDC, and USDT) from various cryptocurrency exchange WebSocket APIs, and tracks live market metrics. The dashboard shows how "stable" each stablecoin market is at any given point in time.
+This app receives price data for major USD-pegged stablecoins from various cryptocurrency exchange WebSocket APIs, and tracks live market metrics. A stablecoin's ability to mirror a pegged asset's price is often taken for granted, but this is not always the case in practice. The Stablecoin Stats dashboard analyzes price movements and shows how "stable" each stablecoin market is at any given point in time.
 
 ## Technology Stack
 
 - Elixir
 - Phoenix
 - Ecto
-- PostgreSQL
 - LiveView
+- PostgreSQL
 - HTML5
 - CSS3
 - Docker
