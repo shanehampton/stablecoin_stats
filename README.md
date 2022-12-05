@@ -1,6 +1,6 @@
 # Stablecoin Stats
 
-A real-time dashboard for USD stablecoin market metrics. Live @ [stablecoinstats.live](stablecoinstats.live).
+A real-time dashboard for USD stablecoin market metrics.
 
 ## What is a Stablecoin?
 
