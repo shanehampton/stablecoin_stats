@@ -2,6 +2,8 @@
 
 A real-time dashboard for USD stablecoin market metrics.
 
+![Screencap](screencap.gif)
+
 ## What is a Stablecoin?
 
 Stablecoins are cryptocurrencies pegged to real-world assets. By design, a stablecoin's price is intended to trade at par with the tracked asset. This app is specifically concerned with coins pegged to the US Dollar (e.g. USDC, USDT, BUSD).
