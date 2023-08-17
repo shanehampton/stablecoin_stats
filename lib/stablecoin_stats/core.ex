@@ -80,11 +80,11 @@ defmodule StablecoinStats.Core do
     price = Enum.at(prices, 0)
     prices = Enum.reverse(prices)
     rmse = calc_rmse(prices)
-    rmse_score = (1 - rmse / 0.02) * 10
+    rmse_score = max(0, 1 - rmse / 0.025) * 10
     stdev = calc_stdev(prices)
-    stdev_score = (1 - stdev / 0.005) * 10
+    stdev_score = max(0, 1 - stdev / 0.005) * 10
     drawdown = calc_max_drawdown(prices)
-    drawdown_score = (1 - drawdown / 0.01) * 10
+    drawdown_score = max(0, 1 - drawdown / 0.01) * 10
     total_score = (rmse_score + stdev_score + drawdown_score) / 3
 
     stat = %{
