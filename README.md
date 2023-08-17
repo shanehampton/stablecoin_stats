@@ -40,6 +40,12 @@ _Best bid_: The model is informed by the best bid in the order book. This is not
 _Multi-pair_: The price of a stablecoin can come from a direct market pair between the stablecoin and the pegged currency. Using USDC as an example, that would be the `USDC-USD` pair. A direct pair is the most accurate way to evaluate price. However, sometimes direct markets are illiquid or non-existent on certain exchanges, leaving the model with a lack of data. To bridge this gap, the model uses an intermediary market with greater liquidity to interpolate price. Instead of just measuring `USDC-USD`, it also measures rates like `USDC-BTC` and `BTC-USD`. A `stablecoin <> BTC <> USD` interpolation evaluates the effective rate a market participant can achieve by selling the stablecoin for BTC and subsequently selling that BTC for USD. This gives the model a means to approximate price even when direct market pairs are not active. In the end, the calculated stablecoin prices use a blend of direct and interpolated rates.<br><br>
 _Aggregated_: The model ingests order book data from multiple exchanges, aggregating them into one price value. This provides a broad view of the stablecoin's price not limited to a singular market.
 
+## Stability Metrics
+
+- _Root-Mean-Square Error (RMSE)_: The square root of the mean squared error between the coin's observed price and the expected $1.00 price. This is a generalized metric to measure residual price breakdown. Lower values mean the price tends to stay closer to the target value.
+- _Standard Deviation (STDEV)_: Dispersion of the price itself; in other words, the observed volatility in price. Lower values mean the price tends to move less drastically.
+- _Max Drawdown (MDDN)_: The maximum observed peak-to-trough price movement. This is a measure of downside risk. Lower values mean the price tends to experience less downward movement by magnitude.
+
 ## Deployment
 
 - Fully containerized build process using `mix release` inside Docker
